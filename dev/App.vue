@@ -7,7 +7,6 @@
       <button @click="toggleTrigger">Toggle trigger</button>
     </div>
     <div v-if="showDatepickers">
-
       <div class="datepicker-container with-input">
         <h3>Range datepicker with input</h3>
         <div class="datepicker-trigger">
@@ -56,7 +55,9 @@
       <div class="datepicker-container with-button">
         <h3>Range datepicker with button</h3>
         <div class="datepicker-trigger">
-          <button id="datepicker-button-trigger">{{ formatDates(buttonDateOne, buttonDateTwo) || 'Select dates' }}</button>
+          <button
+            id="datepicker-button-trigger"
+          >{{ formatDates(buttonDateOne, buttonDateTwo) || 'Select dates' }}</button>
 
           <airbnb-style-datepicker
             :trigger-element-id="'datepicker-button-trigger'"
@@ -118,7 +119,9 @@
       <div class="datepicker-container with-button">
         <h3>Test callback methods</h3>
         <div class="datepicker-trigger">
-          <button id="datepicker-callback-trigger">{{ formatDates(callbackDateOne, callbackDateTwo) || 'Select dates' }}</button>
+          <button
+            id="datepicker-callback-trigger"
+          >{{ formatDates(callbackDateOne, callbackDateTwo) || 'Select dates' }}</button>
 
           <airbnb-style-datepicker
             :trigger-element-id="'datepicker-callback-trigger'"
@@ -149,7 +152,7 @@ import format from 'date-fns/format'
 export default {
   data() {
     return {
-      dateFormat: 'YYYY-MM-DD', //'D MMM',
+      dateFormat: 'yyyy-MM-dd', //'D MMM',
       inputDateOne: '',
       inputDateTwo: '',
       inputSingleDateOne: '',

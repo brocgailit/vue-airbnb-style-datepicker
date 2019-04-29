@@ -211,8 +211,8 @@ import {
   endOfWeek,
   isBefore,
   isAfter,
-  isValid
-} from 'date-fns';
+  isValid,
+} from 'date-fns'
 
 import { debounce, copyObject, findAncestor, randomString } from './../helpers'
 import vClickOutside from 'v-click-outside'
@@ -255,8 +255,8 @@ export default {
   data() {
     return {
       wrapperId: 'airbnb-style-datepicker-wrapper-' + randomString(5),
-      dateFormat: 'YYYY-MM-DD',
-      dateLabelFormat: 'dddd, MMMM D, YYYY',
+      dateFormat: 'yyyy-MM-dd',
+      dateLabelFormat: 'dddd, MMMM D, yyyy',
       showDatepicker: false,
       showKeyboardShortcutsMenu: false,
       showMonths: 2,
@@ -680,7 +680,7 @@ export default {
       if (!value || value.length < 10) {
         return
       }
-      // make sure format is either 'YYYY-MM-DD' or 'DD.MM.YYYY'
+      // make sure format is either 'yyyy-MM-dd' or 'dd.MM.yyyy'
       const isFormatYearFirst = value.match(
         /^(\d{4})-(0[1-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-9]|3[0-1])$/
       )
@@ -692,7 +692,7 @@ export default {
         return
       }
       if (isFormatDayFirst) {
-        //convert to YYYY-MM-DD
+        //convert to yyyy-MM-dd
         value = `${value.substring(6, 10)}-${value.substring(3, 5)}-${value.substring(0, 2)}`
       }
 
@@ -793,8 +793,8 @@ export default {
       this.daysShort.unshift(lastDayShort)
     },
     getMonth(date) {
-      const firstDateOfMonth = format(date, 'YYYY-MM-01')
-      const year = format(date, 'YYYY')
+      const firstDateOfMonth = format(date, 'yyyy-MM-01')
+      const year = format(date, 'yyyy')
       const monthNumber = parseInt(format(date, 'M'))
       const monthName = this.monthNames[monthNumber - 1]
 
@@ -809,7 +809,7 @@ export default {
     getWeeks(date) {
       const weekDayNotInMonth = { dayNumber: 0 }
       const daysInMonth = getDaysInMonth(date)
-      const year = format(date, 'YYYY')
+      const year = format(date, 'yyyy')
       const month = format(date, 'MM')
       let firstDayInWeek = parseInt(format(date, this.sundayFirst ? 'd' : 'E'))
       if (this.sundayFirst) {

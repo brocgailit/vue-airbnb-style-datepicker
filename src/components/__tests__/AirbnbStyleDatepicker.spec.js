@@ -240,7 +240,7 @@ describe('AirbnbStyleDatepicker', () => {
     })
     test('month of minDate is shown first', () => {
       wrapper = createDatePickerInstance({
-        minDate: format(addMonths(new Date(), 2), 'YYYY-MM-DD'),
+        minDate: format(addMonths(new Date(), 2), 'yyyy-MM-dd'),
         startOpen: true,
       })
       const firstVisibleMonth = wrapper.vm.months[1]
@@ -600,8 +600,8 @@ describe('AirbnbStyleDatepicker', () => {
       })
       wrapper.setData({ showDatepicker: true })
       h.wrapperHasClass('asd__wrapper--datepicker-open')
-      const date1 = format(new Date(), 'YYYY-MM-DD')
-      const date2 = format(addDays(new Date(), 4), 'YYYY-MM-DD')
+      const date1 = format(new Date(), 'yyyy-MM-dd')
+      const date2 = format(addDays(new Date(), 4), 'yyyy-MM-dd')
       h.click('[data-date="' + date1 + '"] > button')
       h.click('[data-date="' + date2 + '"] > button')
       h.wrapperHasNotClass('asd__wrapper--datepicker-open')

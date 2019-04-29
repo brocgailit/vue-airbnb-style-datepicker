@@ -202,8 +202,8 @@ return _c('td',{key:index + '_' + dayNumber,ref:("date-" + fullDate),refInFor:tr
   data: function data() {
     return {
       wrapperId: 'airbnb-style-datepicker-wrapper-' + randomString(5),
-      dateFormat: 'YYYY-MM-DD',
-      dateLabelFormat: 'dddd, MMMM D, YYYY',
+      dateFormat: 'yyyy-MM-dd',
+      dateLabelFormat: 'dddd, MMMM D, yyyy',
       showDatepicker: false,
       showKeyboardShortcutsMenu: false,
       showMonths: 2,
@@ -631,7 +631,7 @@ return _c('td',{key:index + '_' + dayNumber,ref:("date-" + fullDate),refInFor:tr
       if (!value || value.length < 10) {
         return
       }
-      // make sure format is either 'YYYY-MM-DD' or 'DD.MM.YYYY'
+      // make sure format is either 'yyyy-MM-dd' or 'dd.MM.yyyy'
       var isFormatYearFirst = value.match(
         /^(\d{4})-(0[1-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-9]|3[0-1])$/
       );
@@ -643,7 +643,7 @@ return _c('td',{key:index + '_' + dayNumber,ref:("date-" + fullDate),refInFor:tr
         return
       }
       if (isFormatDayFirst) {
-        //convert to YYYY-MM-DD
+        //convert to yyyy-MM-dd
         value = (value.substring(6, 10)) + "-" + (value.substring(3, 5)) + "-" + (value.substring(0, 2));
       }
 
@@ -748,8 +748,8 @@ return _c('td',{key:index + '_' + dayNumber,ref:("date-" + fullDate),refInFor:tr
       this.daysShort.unshift(lastDayShort);
     },
     getMonth: function getMonth$$1(date) {
-      var firstDateOfMonth = format(date, 'YYYY-MM-01');
-      var year = format(date, 'YYYY');
+      var firstDateOfMonth = format(date, 'yyyy-MM-01');
+      var year = format(date, 'yyyy');
       var monthNumber = parseInt(format(date, 'M'));
       var monthName = this.monthNames[monthNumber - 1];
 
@@ -764,7 +764,7 @@ return _c('td',{key:index + '_' + dayNumber,ref:("date-" + fullDate),refInFor:tr
     getWeeks: function getWeeks(date) {
       var weekDayNotInMonth = { dayNumber: 0 };
       var daysInMonth = getDaysInMonth(date);
-      var year = format(date, 'YYYY');
+      var year = format(date, 'yyyy');
       var month = format(date, 'MM');
       var firstDayInWeek = parseInt(format(date, this.sundayFirst ? 'd' : 'E'));
       if (this.sundayFirst) {
