@@ -192,27 +192,28 @@
 </template>
 
 <script>
-import format from 'date-fns/format'
-import subMonths from 'date-fns/sub_months'
-import addMonths from 'date-fns/add_months'
-import getDaysInMonth from 'date-fns/get_days_in_month'
-import lastDayOfMonth from 'date-fns/last_day_of_month'
-import getMonth from 'date-fns/get_month'
-import setMonth from 'date-fns/set_month'
-import getYear from 'date-fns/get_year'
-import setYear from 'date-fns/set_year'
-import isSameMonth from 'date-fns/is_same_month'
-import isSameDay from 'date-fns/is_same_day'
-import addDays from 'date-fns/add_days'
-import subDays from 'date-fns/sub_days'
-import addWeeks from 'date-fns/add_weeks'
-import subWeeks from 'date-fns/sub_weeks'
-import startOfMonth from 'date-fns/start_of_month'
-import startOfWeek from 'date-fns/start_of_week'
-import endOfWeek from 'date-fns/end_of_week'
-import isBefore from 'date-fns/is_before'
-import isAfter from 'date-fns/is_after'
-import isValid from 'date-fns/is_valid'
+import {
+  format,
+  subMonths,
+  addMonths,
+  getDaysInMonth,
+  lastDayOfMonth,
+  getMonth,
+  setMonth,
+  getYear,
+  setYear,
+  isSameMonth,
+  isSameDay,
+  addDays,
+  subDays,
+  startOfMonth,
+  startOfWeek,
+  endOfWeek,
+  isBefore,
+  isAfter,
+  isValid
+} from 'date-fns';
+
 import { debounce, copyObject, findAncestor, randomString } from './../helpers'
 import vClickOutside from 'v-click-outside'
 import ResizeSelect from '../directives/ResizeSelect'
